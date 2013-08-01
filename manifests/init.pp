@@ -12,8 +12,6 @@ class statsd(
   $config           = { },
 ) {
 
-  require nodejs
-
   package { 'statsd':
     ensure   => $ensure,
     provider => $provider,
