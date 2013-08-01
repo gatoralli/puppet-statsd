@@ -1,3 +1,4 @@
+<% require "json" -%>
 {
   backends: [<% @backends.each do |backend| -%>
   "<%= backend %>",
@@ -9,6 +10,6 @@
 , flushInterval: "<%= @flushinterval %>"
 , percentThreshold: [<%= @percentthreshold.join(', ') %>]
 <% @config.each do |k, v| -%>
-, <%= k %>: <%= v %>
+, <%= k %>: <%= v.to_json %>
 <% end -%>
 }
